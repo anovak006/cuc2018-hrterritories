@@ -6,6 +6,8 @@ https://www.virtualbox.org/
 
 https://www.osboxes.org/
 
+> export PATH=$PATH:/snap/bin
+
 ## Repozitorij
 
 ```
