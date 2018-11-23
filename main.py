@@ -34,5 +34,5 @@ def cleanup(resp_or_exc):
 
 
 if __name__ == '__main__':
-    db_init(init=True)
+    # db_init(init=True)
     app.run(port=8088, debug=True)

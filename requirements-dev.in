@@ -1,3 +1,8 @@
+# development env
+pytest
+tox
+flake8
+pip-tools
 # production env
 Flask
 flask_restplus

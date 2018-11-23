@@ -1,0 +1,31 @@
+version: '3'
+services:
+
+  staging:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: hrterritories
+    depends_on:
+      - db
+    # volumes:
+    #  - ./hrterritories:/usr/src/app/hrterritories
+    #  - ./tests:/usr/src/app/tests
+    working_dir: /usr/src/app
+    command: ["python", "main.py"]
+    environment:
+      DATABASE_URL: postgresql://carnet:carnet1234@db/hrterritories
+
+  db:
+    build:
+      context: .
+      dockerfile: Dockerfile.hrterritories
+    container_name: psql
+    image: postgres:10-alpine
+    ports:
+      - "5433:5432"
+    environment:
+      - DEBUG=false
+      - POSTGRES_USER=carnet
+      - POSTGRES_PASSWORD=carnet1234
+      - POSTGRES_DB=hrterritories

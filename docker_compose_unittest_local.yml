@@ -1,0 +1,13 @@
+version: '3'
+services:
+
+  unit:
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    image: test
+    # volumes:
+    #  - ./hrterritories:/usr/src/app/hrterritories
+    #  - ./tests:/usr/src/app/tests
+    working_dir: /usr/src/app
+    command: ["pytest", "tests/test_db_connector.py"]

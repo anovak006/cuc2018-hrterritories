@@ -17,8 +17,11 @@ from sqlalchemy.orm import (
     contains_eager
 )
 from sqlalchemy.orm.exc import NoResultFound
+import os
 
-engine = create_engine('sqlite:///sqlalchemy_example.db')
+engine = \
+    create_engine(os.environ['DATABASE_URL'])
+# engine = create_engine('sqlite:///sqlalchemy_example.db')
 
 Session = scoped_session(sessionmaker(bind=engine))
 
