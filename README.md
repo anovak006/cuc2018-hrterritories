@@ -10,11 +10,10 @@ https://www.osboxes.org/
 
 ## Pripremimo virtualnu okolinu
 ```
-# bin/create_lxd_swarm.sh \
-create_lxc_docker_profile\
-create_lxc_docker_image\
-node_create_all setup_lxc_containers
+# bin/create_lxd_swarm.sh create_lxc_docker_profile create_lxc_docker_image node_create_all setup_lxc_containers
+```
 
 Podignimo docker swarm cluster
+```
 # bin/create_lxd_swarm.sh swarm_create
 ```
